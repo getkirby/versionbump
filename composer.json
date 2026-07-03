@@ -3,5 +3,5 @@
   "description": "Example repo demonstrating automatic composer.json version bumping on release branches.",
   "type": "library",
   "license": "MIT",
-  "version": "9.9.9"
+  "version": "0.0.3"
 }

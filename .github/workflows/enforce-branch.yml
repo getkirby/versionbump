@@ -1,4 +1,4 @@
-name: Enforce release source branch
+name: Enforce branch
 
 on:
   pull_request:
@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  check-source-branch:
+  check-branch:
     runs-on: ubuntu-latest
     steps:
       - name: Validate source branch

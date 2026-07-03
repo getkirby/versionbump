@@ -11,9 +11,8 @@ jobs:
     steps:
       - name: Validate source branch
         run: |
-          BRANCH="${{ github.head_ref }}"
-          if ! echo "$BRANCH" | grep -qE '^release/[0-9]+\.[0-9]+\.[0-9]+$'; then
-            echo "::error::PRs into main must come from a release/X.Y.Z branch (got '$BRANCH')"
+          if [[ ! "$GITHUB_HEAD_REF" =~ ^release/[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
+            echo "::error::PRs to main must come from a release/X.Y.Z branch (got '$GITHUB_HEAD_REF')"
             exit 1
           fi
-          echo "OK: source branch '$BRANCH' is a valid release branch"
+          echo "OK: source branch '$GITHUB_HEAD_REF' is a valid release branch"

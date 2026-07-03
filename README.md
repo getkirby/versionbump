@@ -1,1 +1,2 @@
 # versionbump
+<!-- enforce test -->
